@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string.h>
+#include <cstring>
+
+using namespace std;
+int main() {
+	int n;
+	cin >> n;
+	char** stroka= new char*[n];
+	for (int i = 0; i<n; i++)stroka[i] = new char[64];
+	cin.getline(stroka[0], 64);
+	char* prob=new char[64];
+	for (int i = 0; i<64; i++)prob[i] = ' ';
+	for (int i = 0; i<n; i++){
+		cin.getline(stroka[i], 64);
+		int l = strlen(stroka[i]);
+		char* prob1 = new char[64];
+		strcpy(prob1, prob);
+		strcpy(prob1+(-l+63), stroka[i]);
+		strcpy(stroka[i], prob1);
+	}
+	for (int i = 0; i<n; i++)cout << stroka[i] << endl;
+
+}
