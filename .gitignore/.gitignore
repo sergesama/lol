@@ -1,4 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string.h>
 #include <cstring>
@@ -66,5 +65,4 @@ int main() {
 		}
 		cout << prob1 << endl;
 	}
-	system("PAUSE");
 }
