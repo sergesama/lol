@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string.h>
 #include <cstring>
@@ -48,11 +49,11 @@ int main() {
 			int kol_prom = 0;
 			for (int j = 0; j < l; j++){
 				if (stroka[i][j] != ' '){
-					strcpy(prob1 + j - kol_dobavl_prob + kol_prob*kol_prom, stroka[i] + j);
+					strcpy(prob1+j - kol_dobavl_prob + kol_prob*kol_prom, stroka[i] + j);
 				}
 				else{
-					for (int k = 1; k <= kol_prob; k++){
-						strcpy(prob1 + j + kol_prob*kol_prom+k-1, " ");
+					for (int k = 0; k < kol_prob; k++){
+						strcpy(prob1 + j - kol_dobavl_prob + kol_prob*kol_prom + k, " ");
 					}
 					while (stroka[i][j] == ' '&&j < l){
 						kol_dobavl_prob++;
@@ -65,4 +66,5 @@ int main() {
 		}
 		cout << prob1 << endl;
 	}
+	system("PAUSE");
 }
